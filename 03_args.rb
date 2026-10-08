@@ -18,3 +18,8 @@ def log(*messages, **options)
   level = options.fetch(:level, 'info')
   "[#{level}] #{messages.join(' ')}"
 end
+
+def stars(*args, **opts)
+  p args
+  p opts
+end
