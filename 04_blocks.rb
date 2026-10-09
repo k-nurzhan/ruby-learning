@@ -21,6 +21,8 @@ end
 
 # rubocop:disable Style/MapIntoArray
 def my_map(array)
+  raise ArgumentError, 'block required' unless block_given?
+
   result = []
   array.each { |item| result << yield(item) }
   result
