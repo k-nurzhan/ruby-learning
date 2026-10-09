@@ -32,3 +32,18 @@ end
 p my_map([1, 2, 3]) { |n| n * 10 }
 p my_map(%w[a b], &:upcase)
 p my_map([]) { |n| n + 10 }
+
+def show_block(&block)
+  block
+end
+
+b = show_block { |x| x + 1 }
+
+p b.class
+p b.call(1)
+p show_block
+
+def map_twice(array, &)
+  first = my_map(array, &)
+  my_map(first, &)
+end
