@@ -18,3 +18,11 @@ puts 'found negative' if nums.find(&:negative?)
 p [2, 3, 4].reduce(1) { |acc, n| acc * n }
 p [].reduce(0) { |acc, n| acc + n }
 p([].reduce { |acc, n| acc + n })
+
+def evens(numbers)
+  numbers.select(&:even?)
+end
+
+puts 'found' if evens([1, 3])
+p evens([1, 3])
+p evens([1, 4, 6])
