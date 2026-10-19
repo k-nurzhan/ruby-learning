@@ -10,3 +10,11 @@ puts 'yes' if doubled([])
 def tag(words)
   words.map(&:upcase)
 end
+
+def shout(words)
+  words.each { |w| puts w.upcase }
+end
+
+result = shout(%w[hi yo])
+p result
+p shout([])
