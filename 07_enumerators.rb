@@ -26,3 +26,16 @@ end
 puts 'found' if evens([1, 3])
 p evens([1, 3])
 p evens([1, 4, 6])
+
+p %w[x yy].reduce([]) { |acc, w| acc << w.size }
+
+# rubocop:disable Style/EachWithObject, Style/ReduceToHash
+result = %w[a b].reduce({}) do |h, w|
+  h[w] = 1
+  h
+end
+# rubocop:enable Style/EachWithObject, Style/ReduceToHash
+
+p result
+
+p %w[a b].each_with_object({}) { |w, h| h[w] = 1 } # rubocop:disable Style/ReduceToHash
